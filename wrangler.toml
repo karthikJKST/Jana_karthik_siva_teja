@@ -1,4 +1,4 @@
-# Cloudflare configuration for karthik-portfolio
+# Cloudflare Pages configuration for karthik-portfolio
 name = "janakarthiksivateja"
-main = "dist/index.html"
+pages_build_output_dir = "dist"
 compatibility_date = "2026-07-10"
