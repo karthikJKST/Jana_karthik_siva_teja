@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { personalInfo } from "../data/portfolioData";
 import { FiCode, FiDatabase, FiCpu, FiAward } from "react-icons/fi";
@@ -10,17 +11,15 @@ const stats = [
 ];
 
 const About = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="about" className="section">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
         <span className="section-label">// About Me</span>
@@ -42,7 +41,7 @@ const About = () => {
         {/* Left - Description */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div
@@ -93,7 +92,7 @@ const About = () => {
         {/* Right - Stats */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
           style={{
             display: "grid",
@@ -114,7 +113,7 @@ const About = () => {
                 gap: 12,
               }}
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
               whileHover={{ y: -8, borderColor: "rgba(108,99,255,0.3)" }}
             >

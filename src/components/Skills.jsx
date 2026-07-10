@@ -1,10 +1,11 @@
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { skills } from "../data/portfolioData";
 
-const SkillBar = ({ name, level, index, inView }) => (
+const SkillBar = ({ name, level, index, isInView }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
-    animate={inView ? { opacity: 1, y: 0 } : {}}
+    animate={isInView ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.4, delay: index * 0.08 }}
     style={{ marginBottom: 20 }}
   >
@@ -44,7 +45,7 @@ const SkillBar = ({ name, level, index, inView }) => (
     >
       <motion.div
         initial={{ width: 0 }}
-        animate={inView ? { width: `${level}%` } : {}}
+        animate={isInView ? { width: `${level}%` } : {}}
         transition={{ duration: 1, delay: index * 0.08, ease: "easeOut" }}
         style={{
           height: "100%",
@@ -71,17 +72,15 @@ const SkillBar = ({ name, level, index, inView }) => (
 );
 
 const Skills = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="skills" className="section">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
         <span className="section-label">// Skills</span>
@@ -108,7 +107,7 @@ const Skills = () => {
               overflow: "hidden",
             }}
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: catIndex * 0.15 }}
             whileHover={{ y: -6, borderColor: "rgba(108,99,255,0.2)" }}
           >
@@ -140,7 +139,7 @@ const Skills = () => {
                 name={skill.name}
                 level={skill.level}
                 index={i}
-                inView={inView}
+                isInView={isInView}
               />
             ))}
           </motion.div>

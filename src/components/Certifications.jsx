@@ -1,19 +1,18 @@
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { certifications } from "../data/portfolioData";
 import { FiAward, FiExternalLink, FiCalendar } from "react-icons/fi";
 
 const Certifications = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="certifications" className="section">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
         <span className="section-label">// Certifications</span>
@@ -40,7 +39,7 @@ const Certifications = () => {
               overflow: "hidden",
             }}
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.2 }}
             whileHover={{
               y: -6,

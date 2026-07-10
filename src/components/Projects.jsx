@@ -1,19 +1,18 @@
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { projects } from "../data/portfolioData";
-import { FiGithub, FiExternalLink, FiCalendar } from "react-icons/fi";
+import { FiGithub, FiCalendar } from "react-icons/fi";
 
 const Projects = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="projects" className="section">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
         <span className="section-label">// Projects</span>
@@ -42,7 +41,7 @@ const Projects = () => {
               flexDirection: "column",
             }}
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.15 }}
             whileHover={{
               y: -8,

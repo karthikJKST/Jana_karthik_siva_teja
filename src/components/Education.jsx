@@ -1,19 +1,18 @@
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { education } from "../data/portfolioData";
 import { FiBookOpen, FiCalendar, FiAward } from "react-icons/fi";
 
 const Education = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="education" className="section">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
         <span className="section-label">// Education</span>
@@ -41,7 +40,7 @@ const Education = () => {
           <motion.div
             key={item.id}
             initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             style={{
               display: "flex",

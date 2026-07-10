@@ -1,12 +1,11 @@
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { personalInfo } from "../data/portfolioData";
 import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 const Contact = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const contactMethods = [
     {
@@ -45,7 +44,7 @@ const Contact = () => {
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
         <span className="section-label">// Contact</span>
@@ -67,7 +66,7 @@ const Contact = () => {
         {/* Left - Contact Cards */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{
             display: "flex",
@@ -86,7 +85,7 @@ const Contact = () => {
                 gap: 16,
               }}
               initial={{ opacity: 0, x: -20 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
               whileHover={{ x: 8, borderColor: "rgba(108,99,255,0.2)" }}
             >
@@ -164,7 +163,7 @@ const Contact = () => {
             overflow: "hidden",
           }}
           initial={{ opacity: 0, x: 30 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div
