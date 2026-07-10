@@ -1,4 +1,6 @@
-# Cloudflare Pages configuration for karthik-portfolio
+# Cloudflare configuration for karthik-portfolio
 name = "janakarthiksivateja"
-pages_build_output_dir = "dist"
 compatibility_date = "2026-07-10"
+
+[assets]
+directory = "./dist"
