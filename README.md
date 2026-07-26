@@ -1,164 +1,136 @@
-# Karthik Siva Teja - Portfolio Website
+<div align="center">
+  <br />
+  <h1 align="center">👨‍💻 Karthik Siva Teja</h1>
+  <p align="center">
+    <strong>Software Engineer · Full Stack Developer</strong>
+    <br />
+    Java · Spring Boot · React · FastAPI · Python · TypeScript
+  </p>
 
-A modern, responsive portfolio website built with React, Vite, and Framer Motion. Features smooth animations, glassmorphism design, and a dark theme with gradient accents.
+  <p>
+    <a href="https://github.com/karthikJKST">
+      <img src="https://img.shields.io/badge/GitHub-karthikJKST-181717?style=flat-square&logo=github" alt="GitHub" />
+    </a>
+    <a href="https://www.linkedin.com/in/karthik-siva-teja-jana-a367a0275/">
+      <img src="https://img.shields.io/badge/LinkedIn-Karthik%20Siva%20Teja-0A66C2?style=flat-square&logo=linkedin" alt="LinkedIn" />
+    </a>
+    <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react" alt="React 19" />
+    <img src="https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite" alt="Vite 8" />
+    <img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License" />
+  </p>
+</div>
 
-## 🚀 Tech Stack
+---
 
-- **React 19** — Component-based UI library
-- **Vite** — Fast build tool and dev server
-- **Framer Motion** — Animation library for React
-- **React Icons** — Icon library
-- **React Intersection Observer** — Scroll-triggered animations
+## 📖 About
+
+A modern, responsive portfolio website built with **React 19**, **Vite 8**, and **Framer Motion**. Features smooth animations, glassmorphism design, and a dark theme with purple/cyan gradient accents.
+
+This site showcases my skills, projects, certifications, education, and professional experience as a Software Engineer.
+
+---
 
 ## ✨ Features
 
-- 🌗 Dark theme with purple/cyan gradient accents
-- ⚡ Smooth page transitions and scroll animations
-- 🎯 Interactive skill bars with animated fills
-- 🏆 Project cards with hover effects
-- 📚 Education timeline with glassmorphism cards
-- 📱 Fully responsive design
-- 🔗 Social links sidebar (desktop)
-- 🧭 Fixed navbar with active section indicator
+| Feature | Description |
+|---------|-------------|
+| 🌗 **Dark Theme** | Purple/cyan gradient accents with glassmorphism design |
+| ⚡ **Animations** | Smooth page transitions and scroll-triggered animations with Framer Motion |
+| 🎯 **Interactive Skills** | Animated skill bars with percentage fills |
+| 🏆 **Project Showcase** | Project cards with hover effects and tech stack tags |
+| 📚 **Education Timeline** | Glassmorphism cards in a vertical timeline layout |
+| 📱 **Responsive** | Fully adaptive — desktop, tablet, and mobile |
+| 🔗 **Social Links** | Floating sidebar with GitHub, LinkedIn, Email contacts |
+| 🧭 **Fixed Navigation** | Active section indicator with smooth scroll |
 
-## 📂 Project Structure
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|-----------|---------|
+| **React 19** | UI framework |
+| **Vite 8** | Build tool and dev server |
+| **Framer Motion** | Animations and transitions |
+| **React Icons** | Icon library |
+| **CSS** | Styling with design tokens |
+| **Vercel** | Deployment |
+
+---
+
+## 📁 Project Structure
 
 ```
 karthik-portfolio/
-├── public/
-│   └── favicon.svg
 ├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx        # Fixed navigation bar
-│   │   ├── Hero.jsx          # Hero section with animated background
-│   │   ├── About.jsx         # About section with stats
-│   │   ├── Education.jsx     # Education timeline
-│   │   ├── Skills.jsx        # Skills with animated bars
-│   │   ├── Projects.jsx      # Featured projects
-│   │   ├── Certifications.jsx # Certifications badges
-│   │   ├── Contact.jsx       # Contact information
-│   │   └── Footer.jsx        # Footer with social links
-│   ├── data/
-│   │   └── portfolioData.js  # All portfolio content data
-│   ├── App.jsx               # Main app component
-│   ├── main.jsx              # Entry point
-│   └── index.css             # Global styles & design tokens
-├── index.html                # HTML template
-├── vite.config.js            # Vite configuration
-├── package.json              # Dependencies
-└── README.md                 # This file
+│   ├── components/       # React components (Navbar, Hero, About, Skills, etc.)
+│   ├── data/             # Portfolio content data
+│   ├── App.jsx           # Main app component
+│   ├── main.jsx          # Entry point
+│   └── index.css         # Global styles
+├── index.html
+├── vite.config.js
+├── package.json
+└── README.md
 ```
 
-## 🛠️ Local Development
+---
+
+## 🚦 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ (recommended: 20+)
+- Node.js 18+
 - npm 9+
 
-### Installation
+### Local Development
 
 ```bash
-# Navigate to the project folder
 cd karthik-portfolio
-
-# Install dependencies
 npm install
-
-# Start the development server
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`.
-
-### Build for Production
+### Production Build
 
 ```bash
 npm run build
 ```
 
-The production-ready files will be in the `dist/` directory.
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
+---
 
 ## 🌐 Deployment
 
-### Deploy to Vercel (Recommended)
+### Vercel (Recommended)
 
-1. Install Vercel CLI (optional):
-   ```bash
-   npm install -g vercel
-   ```
+1. Push to GitHub
+2. Import to [vercel.com](https://vercel.com)
+3. Vercel auto-detects Vite — no config needed
+4. Deploy
 
-2. **Option A: Via Vercel CLI**
-   ```bash
-   cd karthik-portfolio
-   vercel --prod
-   ```
-   Follow the prompts to log in and deploy.
-
-3. **Option B: Via Vercel Dashboard (Deploy from GitHub)**
-   - Push the project to a GitHub repository
-   - Go to [vercel.com](https://vercel.com) and sign in with GitHub
-   - Click **"Add New Project"** → **"Import Git Repository"**
-   - Select your repository
-   - Vercel auto-detects Vite — no configuration needed
-   - Click **"Deploy"**
-
-### Deploy to Netlify
-
-1. Push the project to a GitHub repository
-2. Go to [netlify.com](https://netlify.com) and sign in with GitHub
-3. Click **"Add new site"** → **"Import an existing project"**
-4. Select your repository
-5. Build settings (auto-detected):
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-6. Click **"Deploy site"**
-
-### Deploy to GitHub Pages
-
-1. Update `vite.config.js` to add the `base` property:
-   ```js
-   export default defineConfig({
-     base: '/your-repo-name/',
-     plugins: [react()],
-   })
-   ```
-
-2. Install the `gh-pages` package:
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-
-3. Add to `package.json`:
-   ```json
-   "homepage": "https://your-username.github.io/your-repo-name",
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d dist"
-   }
-   ```
-
-4. Deploy:
-   ```bash
-   npm run deploy
-   ```
-
-> **Note:** For custom domains, configure the domain in your DNS settings and update the `base` path accordingly.
+---
 
 ## 🎨 Customization
 
-To update the portfolio content, edit the `src/data/portfolioData.js` file:
+Edit `src/data/portfolioData.js` to update personal info, skills, projects, and certifications.
 
-- Update `personalInfo` with your own details
-- Modify `skills`, `projects`, `education`, and `certifications` arrays
-- The site will automatically reflect all changes
+---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+MIT License.
+
+---
+
+## 👤 Author
+
+**Karthik Siva Teja**
+
+- GitHub: [@karthikJKST](https://github.com/karthikJKST)
+- LinkedIn: [Karthik Siva Teja](https://www.linkedin.com/in/karthik-siva-teja-jana-a367a0275/)
+
+---
+
+<div align="center">
+  <sub>Built with React, Vite, and Framer Motion</sub>
+</div>
