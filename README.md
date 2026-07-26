@@ -45,6 +45,35 @@ This site showcases my skills, projects, certifications, education, and professi
 
 ---
 
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     Browser (User)                           │
+│  ┌───────────────────────────────────────────────────────┐   │
+│  │              React SPA (Vite 8)                       │   │
+│  │  ┌────────┐  ┌──────────┐  ┌──────────┐  ┌────────┐  │   │
+│  │  │ Navbar │  │   Hero   │  │  About   │  │ Skills │  │   │
+│  │  └────────┘  └──────────┘  └──────────┘  └────────┘  │   │
+│  │  ┌────────┐  ┌──────────┐  ┌──────────┐  ┌────────┐  │   │
+│  │  │Projects│  │Education │  │  Certs   │  │Contact │  │   │
+│  │  └────────┘  └──────────┘  └──────────┘  └────────┘  │   │
+│  │                  Framer Motion Animations               │   │
+│  └───────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+
+| Layer | Technology |
+|-------|-----------|
+| **Framework** | React 19 with Vite 8 |
+| **Animation** | Framer Motion — scroll-triggered, page transitions |
+| **Styling** | CSS with glassmorphism, purple/cyan gradient theme |
+| **Icons** | React Icons library |
+| **Data** | Static JSON via `src/data/portfolioData.js` |
+| **Hosting** | Vercel (SPA with auto-detected Vite config) |
+```
+
+---
+
 ## 🛠️ Tech Stack
 
 | Technology | Purpose |
