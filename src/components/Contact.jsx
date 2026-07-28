@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { personalInfo } from "../data/portfolioData";
-import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone, FiDownload } from "react-icons/fi";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -36,6 +36,12 @@ const Contact = () => {
       label: "LinkedIn",
       value: personalInfo.linkedin.replace("https://", ""),
       href: personalInfo.linkedin,
+    },
+    {
+      icon: <FiDownload size={20} />,
+      label: "Resume",
+      value: "Download PDF",
+      href: "/jana_karthik_siva_teja_Resume.pdf",
     },
   ];
 
@@ -230,8 +236,8 @@ const Contact = () => {
               zIndex: 1,
             }}
           >
-            I'm currently looking for opportunities in software development and
-            AI/ML. Feel free to reach out!
+            I'm currently looking for opportunities in software engineering,
+            backend development, and full-stack roles. Feel free to reach out!
           </p>
 
           <motion.a
@@ -242,6 +248,35 @@ const Contact = () => {
             whileTap={{ scale: 0.95 }}
           >
             <FiMail /> Send Email
+          </motion.a>
+          <motion.a
+            href="/jana_karthik_siva_teja_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "12px 28px",
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "var(--radius-sm)",
+              color: "var(--text-primary)",
+              fontWeight: 600,
+              fontSize: "0.95rem",
+              cursor: "pointer",
+              transition: "var(--transition)",
+              position: "relative",
+              zIndex: 1,
+            }}
+            whileHover={{
+              scale: 1.05,
+              background: "rgba(255,255,255,0.1)",
+              borderColor: "rgba(108,99,255,0.3)",
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FiDownload /> Download Resume
           </motion.a>
         </motion.div>
       </div>

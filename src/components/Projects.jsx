@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { projects } from "../data/portfolioData";
-import { FiGithub, FiCalendar } from "react-icons/fi";
+import { FiGithub, FiCalendar, FiExternalLink } from "react-icons/fi";
 
 const Projects = () => {
   const ref = useRef(null);
@@ -77,24 +77,74 @@ const Projects = () => {
               {String(project.id).padStart(2, "0")}
             </span>
 
-            {/* Year badge */}
+            {/* Year & Status badges */}
             <div
               style={{
-                display: "inline-flex",
+                display: "flex",
                 alignItems: "center",
-                gap: 6,
-                fontFamily: "'Fira Code', monospace",
-                fontSize: "0.8rem",
-                color: project.color,
-                background: `${project.color}12`,
-                padding: "4px 12px",
-                borderRadius: "20px",
-                alignSelf: "flex-start",
+                gap: 8,
                 marginBottom: 16,
               }}
             >
-              <FiCalendar size={14} />
-              {project.year}
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  fontFamily: "'Fira Code', monospace",
+                  fontSize: "0.8rem",
+                  color: project.color,
+                  background: `${project.color}12`,
+                  padding: "4px 12px",
+                  borderRadius: "20px",
+                }}
+              >
+                <FiCalendar size={14} />
+                {project.year}
+              </div>
+              {project.status && (
+                <span
+                  style={{
+                    fontFamily: "'Fira Code', monospace",
+                    fontSize: "0.75rem",
+                    color:
+                      project.status === "Production"
+                        ? "#4CAF50"
+                        : project.status === "Live"
+                        ? "#00D4FF"
+                        : project.status === "Beta"
+                        ? "#FFA500"
+                        : "var(--text-muted)",
+                    background:
+                      project.status === "Production"
+                        ? "rgba(76,175,80,0.12)"
+                        : project.status === "Live"
+                        ? "rgba(0,212,255,0.12)"
+                        : project.status === "Beta"
+                        ? "rgba(255,165,0,0.12)"
+                        : "rgba(255,255,255,0.04)",
+                    padding: "4px 10px",
+                    borderRadius: "20px",
+                    border: `1px solid ${
+                      project.status === "Production"
+                        ? "rgba(76,175,80,0.3)"
+                        : project.status === "Live"
+                        ? "rgba(0,212,255,0.3)"
+                        : project.status === "Beta"
+                        ? "rgba(255,165,0,0.3)"
+                        : "rgba(255,255,255,0.06)"
+                    }`,
+                  }}
+                >
+                  {project.status === "Production"
+                    ? "\u25CF Production"
+                    : project.status === "Live"
+                    ? "\u25CF Live"
+                    : project.status === "Beta"
+                    ? "\u25CF Beta"
+                    : project.status}
+                </span>
+              )}
             </div>
 
             {/* Title */}
@@ -176,6 +226,26 @@ const Projects = () => {
                 <FiGithub size={16} />
                 Source Code
               </motion.a>
+              {project.live && (
+                <motion.a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    color: "var(--text-muted)",
+                    fontSize: "0.9rem",
+                    fontWeight: 500,
+                    transition: "var(--transition)",
+                  }}
+                  whileHover={{ color: "#4CAF50", gap: 8 }}
+                >
+                  <FiExternalLink size={16} />
+                  Live Demo
+                </motion.a>
+              )}
             </div>
           </motion.div>
         ))}

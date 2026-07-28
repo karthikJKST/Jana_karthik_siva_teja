@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "../data/portfolioData";
-import { FiGithub, FiLinkedin, FiMail, FiChevronDown } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiChevronDown, FiDownload } from "react-icons/fi";
 
 const Hero = () => {
   const [cursorPos, setCursorPos] = useState({ x: -1000, y: -1000 });
@@ -262,6 +262,34 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
           >
             <FiLinkedin /> LinkedIn
+          </motion.a>
+
+          <motion.a
+            href="/jana_karthik_siva_teja_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "12px 28px",
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "var(--radius-sm)",
+              color: "var(--text-primary)",
+              fontWeight: 600,
+              fontSize: "0.95rem",
+              cursor: "pointer",
+              transition: "var(--transition)",
+            }}
+            whileHover={{
+              scale: 1.05,
+              background: "rgba(255,255,255,0.1)",
+              borderColor: "rgba(76,175,80,0.3)",
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FiDownload /> Resume
           </motion.a>
         </motion.div>
 

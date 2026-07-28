@@ -4,8 +4,8 @@ import { personalInfo } from "../data/portfolioData";
 import { FiCode, FiDatabase, FiCpu, FiAward } from "react-icons/fi";
 
 const stats = [
-  { icon: <FiCode size={24} />, value: "3+", label: "Projects" },
-  { icon: <FiDatabase size={24} />, value: "4+", label: "Technologies" },
+  { icon: <FiCode size={24} />, value: "6+", label: "Projects" },
+  { icon: <FiDatabase size={24} />, value: "10+", label: "Technologies" },
   { icon: <FiCpu size={24} />, value: "2", label: "Certifications" },
   { icon: <FiAward size={24} />, value: "7.98", label: "CGPA" },
 ];
@@ -83,8 +83,8 @@ const About = () => {
               <strong style={{ color: "var(--text-primary)" }}>
                 B.Tech in Computer Science
               </strong>{" "}
-              at VIT-AP, with a focus on AI/ML and software development. I love
-              turning complex problems into simple, beautiful solutions.
+              at VIT-AP, with expertise in full-stack development, backend engineering,
+              and AI/ML. I love turning complex problems into simple, scalable solutions.
             </p>
           </div>
         </motion.div>
