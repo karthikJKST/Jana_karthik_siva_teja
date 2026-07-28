@@ -7,7 +7,7 @@ const stats = [
   { icon: <FiCode size={24} />, value: "6+", label: "Projects" },
   { icon: <FiDatabase size={24} />, value: "10+", label: "Technologies" },
   { icon: <FiCpu size={24} />, value: "2", label: "Certifications" },
-  { icon: <FiAward size={24} />, value: "7.98", label: "CGPA" },
+  { icon: <FiAward size={24} />, value: "7.99", label: "CGPA" },
 ];
 
 const About = () => {

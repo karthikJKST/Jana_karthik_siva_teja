@@ -16,7 +16,7 @@ export const education = [
     degree: "B.Tech Computer Science and Engineering",
     institution: "Vellore Institute of Technology (VIT-AP)",
     period: "2022 – 2026",
-    score: "CGPA: 7.98 / 10",
+    score: "CGPA: 7.99 / 10",
     description: "Focusing on AI/ML, software development, and database systems.",
   },
   {
