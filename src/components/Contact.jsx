@@ -230,7 +230,7 @@ const Contact = () => {
               color: "var(--text-secondary)",
               fontSize: "0.95rem",
               maxWidth: 320,
-              marginBottom: 28,
+              marginBottom: 32,
               lineHeight: 1.7,
               position: "relative",
               zIndex: 1,
@@ -240,44 +240,60 @@ const Contact = () => {
             backend development, and full-stack roles. Feel free to reach out!
           </p>
 
-          <motion.a
-            href={`mailto:${personalInfo.email}`}
-            className="glow-btn"
-            style={{ position: "relative", zIndex: 1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FiMail /> Send Email
-          </motion.a>
-          <motion.a
-            href="/jana_karthik_siva_teja_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
             style={{
-              display: "inline-flex",
+              display: "flex",
+              flexDirection: "column",
               alignItems: "center",
-              gap: 8,
-              padding: "12px 28px",
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: "var(--radius-sm)",
-              color: "var(--text-primary)",
-              fontWeight: 600,
-              fontSize: "0.95rem",
-              cursor: "pointer",
-              transition: "var(--transition)",
+              gap: 14,
+              width: "100%",
+              maxWidth: 240,
               position: "relative",
               zIndex: 1,
             }}
-            whileHover={{
-              scale: 1.05,
-              background: "rgba(255,255,255,0.1)",
-              borderColor: "rgba(108,99,255,0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
           >
-            <FiDownload /> Download Resume
-          </motion.a>
+            <motion.a
+              href={`mailto:${personalInfo.email}`}
+              className="glow-btn"
+              style={{
+                width: "100%",
+                justifyContent: "center",
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FiMail /> Send Email
+            </motion.a>
+            <motion.a
+              href="/jana_karthik_siva_teja_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 8,
+                padding: "12px 28px",
+                width: "100%",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: "var(--radius-sm)",
+                color: "var(--text-primary)",
+                fontWeight: 600,
+                fontSize: "0.95rem",
+                cursor: "pointer",
+                transition: "var(--transition)",
+              }}
+              whileHover={{
+                scale: 1.05,
+                background: "rgba(255,255,255,0.1)",
+                borderColor: "rgba(108,99,255,0.3)",
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FiDownload /> Download Resume
+            </motion.a>
+          </div>
         </motion.div>
       </div>
 
